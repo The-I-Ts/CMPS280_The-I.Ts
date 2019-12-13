@@ -1,0 +1,203 @@
+package CMPS280;
+
+import java.util.ArrayList;
+
+public class Orders extends Tables implements Food,Drinks  {
+	
+	   public static int orderNum;    // Order Number
+	        protected int drinkID;	  // Drink ID
+	            double drinkPrice;    // Drink Price
+	         protected int foodID;    // Food Number
+	           	 double foodPrice;    // Food Price
+	         private int TableNum;	  // Table Number (From Abstract)
+	           	 
+	
+	Orders() {} // Default Constructor
+	
+	Orders(int TableNum, int drinkID, int foodID) {  // Utilized for (orders ArrayList)
+		
+		this.TableNum = TableNum;
+		this.drinkID = drinkID;
+		this.foodID = foodID;
+		}
+
+	public int getorderNum(int orderNum) {
+		return Orders.orderNum = orderNum;
+	}
+	
+	///////////////////////////////////////
+	
+	Orders(int foodID, double foodPrice, double drinkPrice) {  // Utilized for (price ArrayList)
+		this.foodID = foodID;
+		this.foodPrice = foodPrice;
+		this.drinkPrice = drinkPrice;
+		
+	}
+	
+	
+	public void setDrinkID(int number) {  // Sets drink number
+		this.drinkID = number;			
+	}
+	
+	public int getDrinkID() {  // Retrieves drink number
+		return drinkID;
+	}
+	
+	public void setDrinkPrice(double price) { // Sets drink price
+	}
+	
+	public double getDrinkPrice() { // Retrieves drink price
+		return drinkPrice;
+	}
+	
+	public void setFoodID(int number) { // Sets food number
+		this.foodID = number;	
+	}
+	
+	public int getFoodID() { // Retrieves food number
+		return foodID;
+	}
+	
+	public void setFoodPrice(double price) {  // Sets food price
+	}
+	
+	public double getFoodPrice() { // Retrieves food price
+		return foodPrice;
+	}
+	
+	public int getTableNum() {  // Retrieves table number
+		return TableNum;
+	}
+	
+	public void setTableNum(int table) { // Sets table number
+	}
+
+	public static void search(ArrayList<Orders> price) {
+		// TODO Auto-generated method stub
+		
+	}
+		
+	}
+  ---------------------------------------------------------------------------------------------------------------------------
+  
+  package CMPS280;
+
+public interface Drinks{
+	
+	public void setDrinkID(int number); // Set method --------> Orders
+					  int getDrinkID(); // Set method --------> Orders
+		 			
+	public void setDrinkPrice(double price);  // Set method -------> Orders
+					double getDrinkPrice();   // Get method -------> Orders
+	
+	}
+  
+  ---------------------------------------------------------------------------------------------------------------------------
+ 
+ package CMPS280;
+
+public interface Food {
+	
+	public void setFoodID(int number); // Set Method ----------> Orders
+					int getFoodID(); // Get Method ----------> Orders
+	
+	public void setFoodPrice(double price); // Set Method -----------> Orders
+					double getFoodPrice(); // Get Method -----------> Orders
+}
+-----------------------------------------------------------------------------------------------------------------------------
+
+package CMPS280;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+	
+		System.out.println("Testro Database"); // Opening output line
+		System.out.println("======================================");
+	    
+	    Scanner input = new Scanner(System.in); // Creates the scanner
+		
+	    
+	    
+	    ArrayList<Orders> price = new ArrayList<Orders> ();
+	    	price.add(new Orders(1, 9.25, 3.25));
+	    	price.add(new Orders(2, 6.50, 1.75));
+	    	price.add(new Orders(3, 10.50, 2.50));
+	    	price.add(new Orders(4, 7.75, 3.50));
+	    	price.add(new Orders(5, 6.25, 1.50));
+	    	price.add(new Orders(6, 8.75, 2.00));
+	    	price.add(new Orders(7, 6.50, 3.00));
+	    	
+	    	Orders.search(price);
+	    
+	    ArrayList<Orders> orders = new ArrayList<Orders>(20);  	
+	    	
+	    	orders.add(new Orders(1, 2, 4));
+	    	orders.add(new Orders(2, 3, 1));
+	    	orders.add(new Orders(3, 5, 7));
+	    	orders.add(new Orders(4, 1, 5));
+	    	orders.add(new Orders(5, 6, 3));
+	    	orders.add(new Orders(6, 4, 5));
+	    	orders.add(new Orders(3, 3, 2));
+	    	orders.add(new Orders(5, 3, 6));
+	    	orders.add(new Orders(6, 6, 7));
+	        orders.add(new Orders(2, 6, 3));
+	    
+	    	orders.addAll(orders);
+	    	
+	    	
+	    	for (int i = 0; i < orders.size(); i++) { // Starts at the first index value and proceeds until size is reached.
+	    	
+	    	
+	    	
+			System.out.println("Order #: " + i);
+	    	
+	    	System.out.print("Table #: "); // Prints Table Number
+	    	int TableNum = input.nextInt();
+	    	
+	    	if (TableNum >= 1 && TableNum <= 6){
+               
+            }
+            else if (TableNum < 1 || TableNum > 6){
+                throw new NumberFormatException("The table number must be between 1 and 6"); 
+            }
+	    	
+            System.out.print("Drink #: "); // Prints Drink Order
+	        int DrinkNum = input.nextInt();
+	        price.get(i).getDrinkPrice();
+	        
+	        System.out.print("Food #: "); // Prints Food Order 
+	        int FoodNum = input.nextInt();
+	        price.get(i).getFoodPrice();
+	        
+	        System.out.print("Total: " + "$"); // Prints Total
+	        System.out.print(price.get(i).getFoodPrice() + price.get(i).getDrinkPrice());
+	        
+
+	        
+	    	System.out.println("\n--------------------------------------");	    	
+	    
+	    	
+	    	} 
+	}
+	}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+package CMPS280;
+
+public abstract class Tables { 
+	
+	private int TableNum; // Table Number
+	
+	public abstract int getTableNum(); // Retrieves Table Number
+	
+	public abstract void setTableNum(int table); // Sets Table Number
+	
+	
+}
+----------------------------------------------------------------------------------------------------------------------------
+
+
