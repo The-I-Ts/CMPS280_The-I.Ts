@@ -1,1 +1,42 @@
+*For future reference, we will read and print from the code to create a file. To maintain the integrity of this project, 
+kept it as it was when we turned it in.*
 
+
+Testro Database
+======================================
+Order #: 0
+Table #: 1
+Drink #: 4
+Food #: 7
+Total: $12.5
+--------------------------------------
+Order #: 1
+Table #: 2
+Drink #: 9
+Food #: 6
+Total: $8.25
+--------------------------------------
+Order #: 2
+Table #: 3
+Drink #: 3
+Food #: 1
+Total: $13.0
+--------------------------------------
+Order #: 3
+Table #: 4
+Drink #: 5
+Food #: 7
+Total: $11.25
+--------------------------------------
+Order #: 4
+Table #: 6
+Drink #: 1
+Food #: 7
+Total: $7.75
+--------------------------------------
+Order #: 5
+Table #: 5
+Drink #: 3
+Food #: 7
+Total: $10.75
+-------------------------------------
